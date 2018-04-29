@@ -1,4 +1,4 @@
 export const environment = {
     production: false,
-    apiUrl: 'http://localhost:5000'
+    apiUrl: 'http://mpgprestapiserver:8080'
 };
