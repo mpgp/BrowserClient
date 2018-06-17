@@ -13,10 +13,10 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-7fa706.svg?longCache=true)](.github/PULL_REQUEST_TEMPLATE.md)
 
 [![stable](https://img.shields.io/badge/stability-stable-blue.svg?longCache=true)](https://github.com/Naereen/badges)
-[![Build status](https://api.travis-ci.com/mpgp/BrowserClient.svg?branch=src)](https://api.travis-ci.com/mpgp/BrowserClient.svg?branch=src)
+[![Build status](https://api.travis-ci.com/mpgp/BrowserClient.svg?branch=master)](https://api.travis-ci.com/mpgp/BrowserClient.svg?branch=master)
 [![CircleCI](https://circleci.com/gh/mpgp/BrowserClient.svg?style=svg)](https://circleci.com/gh/mpgp/BrowserClient)
 
-[![Coverage Status](https://coveralls.io/repos/github/mpgp/BrowserClient/badge.svg?branch=src)](https://coveralls.io/github/mpgp/BrowserClient?branch=src)
+[![Coverage Status](https://coveralls.io/repos/github/mpgp/BrowserClient/badge.svg?branch=master)](https://coveralls.io/github/mpgp/BrowserClient?branch=master)
 [![Known Vulnerabilities](https://snyk.io/test/github/mpgp/BrowserClient/badge.svg?targetFile=package.json)](https://snyk.io/test/github/mpgp/BrowserClient?targetFile=package.json) [![Greenkeeper badge](https://badges.greenkeeper.io/mpgp/BrowserClient.svg)](https://greenkeeper.io/)
 
 ## Pull docker image
