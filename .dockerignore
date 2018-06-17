@@ -1,0 +1,21 @@
+#### for fast build
+#dist
+
+#### for full staged build
+src
+
+.circleci
+.github
+.git
+.vscode
+.vs
+coverage
+node_modules
+.angulardoc.json
+.dockerignore
+.editorconfig
+.gitignore
+.prettierrc.yml
+.travis.yml
+LICENSE
+README.md
