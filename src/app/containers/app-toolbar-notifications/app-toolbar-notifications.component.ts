@@ -6,4 +6,4 @@ import { ChangeDetectionStrategy, Component, ViewEncapsulation } from '@angular/
   selector: 'app-toolbar-notifications',
   templateUrl: './app-toolbar-notifications.component.html',
 })
-export class AppToolbarNotificationsComponent {}
+export class AppToolbarNotificationsComponent { }

@@ -11,4 +11,4 @@ const routes: Routes = [
   exports: [RouterModule],
   imports: [RouterModule.forRoot(routes, { useHash: false })],
 })
-export class AppRoutingModule {}
+export class AppRoutingModule { }

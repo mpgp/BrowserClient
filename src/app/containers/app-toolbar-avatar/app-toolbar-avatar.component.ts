@@ -7,4 +7,4 @@ import { ChangeDetectionStrategy, Component, ViewEncapsulation } from '@angular/
   styleUrls: ['./app-toolbar-avatar.component.scss'],
   templateUrl: './app-toolbar-avatar.component.html',
 })
-export class AppToolbarAvatarComponent {}
+export class AppToolbarAvatarComponent { }

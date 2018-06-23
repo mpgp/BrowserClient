@@ -7,4 +7,4 @@ import { ChangeDetectionStrategy, Component, ViewEncapsulation } from '@angular/
   styleUrls: ['./app-root.component.scss'],
   templateUrl: './app-root.component.html',
 })
-export class AppRootComponent {}
+export class AppRootComponent { }

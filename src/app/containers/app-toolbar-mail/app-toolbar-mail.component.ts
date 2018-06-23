@@ -6,4 +6,4 @@ import { ChangeDetectionStrategy, Component, ViewEncapsulation } from '@angular/
   selector: 'app-toolbar-mail',
   templateUrl: './app-toolbar-mail.component.html',
 })
-export class AppToolbarMailComponent {}
+export class AppToolbarMailComponent { }
