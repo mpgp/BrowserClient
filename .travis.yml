@@ -16,6 +16,8 @@ branches:
 env:
   global:
     - BRANCH=$TRAVIS_BRANCH
+    - GITHUB_REPO_OWNER=mpgp
+    - GITHUB_REPO_NAME=BrowserClient
     - GITLAB_REPO_OWNER=mpgp
     - GITLAB_REPO_NAME=BrowserClient
     - DOCKER_IMAGE_OWNER=mpgp129
