@@ -56,10 +56,6 @@
     "no-duplicate-parameter-names": false,
     "no-empty-interfaces": false,
     "no-empty-line-after-opening-brace": false,
-    "no-implicit-dependencies": [
-      true,
-      "optional"
-    ],
     "no-import-side-effect": true,
     "no-internal-module": false,
     "no-magic-numbers": false,

@@ -1,4 +1,3 @@
-import { Injectable } from '@angular/core';
 import { Observable, of, Subject, throwError } from 'rxjs';
 import { tap } from 'rxjs/operators';
 
@@ -7,7 +6,8 @@ interface CacheContent<T> {
   value: T;
 }
 
-@Injectable()
+// Non-injectable.
+// Do not provide this service to modules.
 export class CacheService {
   /* tslint:disable:no-any */
   private readonly cache = new Map<string, CacheContent<any>>();
@@ -79,7 +79,7 @@ export class CacheService {
 /* tslint:disable:no-any no-invalid-this */
 export function Cacheable(cacheTime: number = CacheService.cacheTime): Function {
   return (target: Object, methodName: string, propertyDescriptor: PropertyDescriptor): PropertyDescriptor => {
-    const descriptor = propertyDescriptor || (Object.getOwnPropertyDescriptor(target, methodName));
+    const descriptor = propertyDescriptor || Object.getOwnPropertyDescriptor(target, methodName);
     const originalMethod = descriptor.value;
 
     descriptor.value = function newMethod(): any {

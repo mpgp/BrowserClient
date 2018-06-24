@@ -20,10 +20,20 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 [![Known Vulnerabilities](https://snyk.io/test/github/mpgp/BrowserClient/badge.svg?targetFile=package.json)](https://snyk.io/test/github/mpgp/BrowserClient?targetFile=package.json) [![Greenkeeper badge](https://badges.greenkeeper.io/mpgp/BrowserClient.svg)](https://greenkeeper.io/)
 
 ## Pull docker image
+
 `docker pull mpgp129/mpgpclient`
 
 ## Run docker container
+
 `docker run --rm --hostname localhost -p 8080:8080  --name mpgpclient mpgp129/mpgpclient:latest`
+
+---
+
+## Install packages
+
+`yarn install`
+
+`yarn add --global @angular/cli`
 
 ## Development server
 

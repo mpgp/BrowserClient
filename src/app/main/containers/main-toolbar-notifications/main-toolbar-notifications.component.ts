@@ -3,7 +3,7 @@ import { ChangeDetectionStrategy, Component, ViewEncapsulation } from '@angular/
 @Component({
   changeDetection: ChangeDetectionStrategy.OnPush,
   encapsulation: ViewEncapsulation.None,
-  selector: 'main-root',
-  templateUrl: './main-root.component.html',
+  selector: 'main-toolbar-notifications',
+  templateUrl: './main-toolbar-notifications.component.html',
 })
-export class MainRootComponent {}
+export class MainToolbarNotificationsComponent {}

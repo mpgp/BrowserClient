@@ -3,8 +3,8 @@ import { ChangeDetectionStrategy, Component, ViewEncapsulation } from '@angular/
 @Component({
   changeDetection: ChangeDetectionStrategy.OnPush,
   encapsulation: ViewEncapsulation.None,
-  selector: 'app-toolbar-avatar',
-  styleUrls: ['./app-toolbar-avatar.component.scss'],
-  templateUrl: './app-toolbar-avatar.component.html',
+  selector: 'main-root',
+  styleUrls: ['./main-root.component.scss'],
+  templateUrl: './main-root.component.html',
 })
-export class AppToolbarAvatarComponent { }
+export class MainRootComponent {}

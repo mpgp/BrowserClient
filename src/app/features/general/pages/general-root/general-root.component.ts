@@ -3,7 +3,7 @@ import { ChangeDetectionStrategy, Component, ViewEncapsulation } from '@angular/
 @Component({
   changeDetection: ChangeDetectionStrategy.OnPush,
   encapsulation: ViewEncapsulation.None,
-  selector: 'app-toolbar-mail',
-  templateUrl: './app-toolbar-mail.component.html',
+  selector: 'general-root',
+  templateUrl: './general-root.component.html',
 })
-export class AppToolbarMailComponent { }
+export class GeneralRootComponent {}

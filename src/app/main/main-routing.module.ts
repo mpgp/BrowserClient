@@ -2,13 +2,13 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
 const routes: Routes = [
-  { path: '', pathMatch: 'full', redirectTo: 'main' },
-  { path: 'main', loadChildren: './features/main/main.module#MainModule' },
-  { path: '**', redirectTo: 'main' },
+  { path: '', pathMatch: 'full', redirectTo: 'general' },
+  { path: 'general', loadChildren: '../features/general/general.module#GeneralModule' },
+  { path: '**', redirectTo: 'general' },
 ];
 
 @NgModule({
   exports: [RouterModule],
   imports: [RouterModule.forRoot(routes, { useHash: false })],
 })
-export class AppRoutingModule { }
+export class MainRoutingModule {}
