@@ -49,7 +49,7 @@
             ],
             "styles": [
               {
-                "input": "node_modules/@angular/material/prebuilt-themes/purple-green.css"
+                "input": "node_modules/@angular/material/prebuilt-themes/pink-bluegrey.css"
               },
               "src/styles.scss"
             ],

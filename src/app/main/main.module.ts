@@ -1,11 +1,6 @@
-import { LayoutModule } from '@angular/cdk/layout';
-import { HttpClientModule } from '@angular/common/http';
+import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { MatBadgeModule, MatIconModule, MatListModule, MatMenuModule, MatToolbarModule } from '@angular/material';
-import { BrowserModule } from '@angular/platform-browser';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-
-import { CoreModule } from '~/core/core.module';
 
 import { components } from './components';
 import { containers } from './containers';
@@ -16,13 +11,16 @@ const declarations = [...components, ...containers, ...pages];
 
 export const vendorImports = [MatBadgeModule, MatIconModule, MatListModule, MatMenuModule, MatToolbarModule];
 
-const imports = [MainRoutingModule, BrowserAnimationsModule, BrowserModule, CoreModule, HttpClientModule, LayoutModule, ...vendorImports];
+const imports = [CommonModule, MainRoutingModule, ...vendorImports];
 
 const _exports = [MainRootComponent];
+
+const providers = [];
 
 @NgModule({
   declarations,
   imports,
+  providers,
   exports: _exports,
 })
 export class MainModule {}

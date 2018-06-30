@@ -1,7 +1,9 @@
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
-import { NgModule } from '@angular/core';
+import { ErrorHandler, NgModule } from '@angular/core';
 
 import { AuthInterceptor } from './services/auth.interceptor';
+import { ErrorsHandler } from './services/errors-handler.service';
+import { ErrorsLogger } from './services/errors-logger.service';
 
 const authInterceptor = {
   multi: true,
@@ -9,7 +11,12 @@ const authInterceptor = {
   useClass: AuthInterceptor,
 };
 
-const providers = [authInterceptor];
+const errorsHandler = {
+  provide: ErrorHandler,
+  useClass: ErrorsHandler,
+};
+
+const providers = [authInterceptor, errorsHandler, ErrorsLogger];
 
 @NgModule({
   providers,

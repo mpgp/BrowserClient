@@ -4,6 +4,7 @@
 
 export const environment = {
   apiUrl: 'http://localhost:5000/api/',
+  clientId: 'mpgpclient',
   production: false,
   websocketPath: 'ws://localhost:5000/elite-crew',
 };

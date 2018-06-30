@@ -1,7 +1,81 @@
 /* You can add global styles to this file, and also import other style files */
 html,
 body {
-  background-color: #424242;
   margin: 0;
   padding: 0;
+}
+
+* {
+  &:active,
+  :focus {
+    outline: none !important;
+  }
+}
+
+label {
+  margin-bottom: 0;
+}
+
+code {
+  border-radius: 10px;
+  padding: 0 8px 1px;
+  white-space: nowrap;
+}
+
+.mat-menu-content {
+  .mat-icon {
+    left: 4px;
+    position: relative;
+    top: 2px;
+  }
+}
+
+@import '~@angular/material/theming';
+
+/* stylelint-disable at-rule-no-unknown */
+@mixin anms-styles-reset-theme($theme) {
+  $primary: map-get($theme, primary);
+  $accent: map-get($theme, accent);
+  $foreground: map-get($theme, foreground);
+
+  a {
+    color: mat-color($foreground, text);
+
+    &:hover {
+      color: mat-color($accent);
+    }
+  }
+
+  code {
+    background-color: mat-color($accent, lighter);
+    color: mat-color($accent, lighter-contrast);
+  }
+}
+
+$toolbar-breakpoint: 600px;
+
+$link-hover-decoration: none;
+
+$grid-breakpoints: (
+  xs: 0,
+  sm: 576px,
+  md: 768px,
+  lg: 992px,
+  xl: 1200px
+);
+
+$anms-black-primary: mat-palette($mat-grey, 700, 300, 900);
+$anms-black-accent: mat-palette($mat-blue-grey, 400);
+$anms-black-warn: mat-palette($mat-red, 500);
+
+$anms-black-theme: mat-dark-theme(
+  $anms-black-primary,
+  $anms-black-accent,
+  $anms-black-warn
+);
+
+@include angular-material-theme($anms-black-theme);
+
+body .mat-card {
+  border-radius: 0;
 }
