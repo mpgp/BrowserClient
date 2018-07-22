@@ -20,3 +20,4 @@ describe('MainScrollToTopComponent', () => {
     expect(component).toBeTruthy();
   }));
 });
+ 

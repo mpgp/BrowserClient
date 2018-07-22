@@ -1,6 +1,9 @@
+import { HttpClientModule } from '@angular/common/http';
 import { async, TestBed } from '@angular/core/testing';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { RouterTestingModule } from '@angular/router/testing';
+
+import { AccountService } from '~/core/services/account.service';
 
 import { MainRootComponent, pages } from '../';
 import { components } from '../../components';
@@ -12,6 +15,7 @@ describe('MainRootComponent', () => {
     TestBed.configureTestingModule({
       imports: [NoopAnimationsModule, RouterTestingModule, ...vendorImports],
       declarations: [...components, ...containers, ...pages],
+      providers: [AccountService, HttpClientModule],
     }).compileComponents();
   }));
 

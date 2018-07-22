@@ -18,6 +18,7 @@ export class AccountRegisterRootComponent {
   constructor(private readonly accountService: AccountService) {}
 
   onSubmit(command: RegisterAccountCommand): void {
+    this.formErorr$.next('');
     this.accountService
       .register(command)
       .pipe(

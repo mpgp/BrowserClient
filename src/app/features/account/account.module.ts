@@ -1,7 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { MatButtonModule, MatCardModule, MatFormFieldModule, MatInputModule, MatProgressSpinnerModule } from '@angular/material';
+import { MatButtonModule, MatCardModule, MatFormFieldModule, MatInputModule } from '@angular/material';
 
 import { MpgpFormControlErrorModule } from '~/shared';
 
@@ -14,7 +14,7 @@ import { pages } from './pages';
 
 const declarations = [...components, ...containers, ...pages];
 
-export const vendorImports = [MatButtonModule, MatCardModule, MatFormFieldModule, MatInputModule, MatProgressSpinnerModule];
+export const vendorImports = [MatButtonModule, MatCardModule, MatFormFieldModule, MatInputModule];
 
 const imports = [AccountRoutingModule, CommonModule, FormsModule, MpgpFormControlErrorModule, ReactiveFormsModule, ...vendorImports];
 const providers = [LogoutGuard, UnauthorizedGuard];

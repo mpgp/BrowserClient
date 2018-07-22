@@ -18,6 +18,7 @@ export class AccountLoginRootComponent {
   constructor(private readonly accountService: AccountService) {}
 
   onSubmit(command: AuthorizeAccountCommand): void {
+    this.formErorr$.next('');
     this.accountService
       .login(command)
       .pipe(

@@ -1,0 +1,43 @@
+<form autocomplete="off" role="presentation" [formGroup]="form" (ngSubmit)="onSubmit($event)">
+  <table>
+    <tr>
+      <td colspan="2">
+        <mat-form-field class="demo-full-width">
+          <input matInput placeholder="Nickname" name="nickname" autocomplete="off" formControlName="nickname" required>
+          <mat-error [MpgpFormControlError]="form.controls['nickname'].errors"></mat-error>
+          <mat-hint>Your user name</mat-hint>
+        </mat-form-field>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="2">
+        <mat-form-field class="demo-full-width">
+          <input matInput placeholder="Status Info" name="statusInfo" autocomplete="off" formControlName="statusInfo" required>
+          <mat-error [MpgpFormControlError]="form.controls['statusInfo'].errors"></mat-error>
+        </mat-form-field>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="2">
+        <mat-form-field class="demo-full-width">
+          <input matInput placeholder="Languages" name="languages" autocomplete="off" formControlName="languages" required>
+          <mat-error [MpgpFormControlError]="form.controls['languages'].errors"></mat-error>
+          <mat-hint>For example: English, Deutsch</mat-hint>
+        </mat-form-field>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="2">
+        <mat-form-field class="demo-full-width">
+          <input matInput placeholder="Avatar" name="avatar" autocomplete="off" formControlName="avatar" required>
+          <mat-error [MpgpFormControlError]="form.controls['avatar'].errors"></mat-error>
+        </mat-form-field>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="2" class="content-center">
+        <button mat-raised-button color="accent" [disabled]="!form.valid">Submit</button>
+      </td>
+    </tr>
+  </table>
+</form>
