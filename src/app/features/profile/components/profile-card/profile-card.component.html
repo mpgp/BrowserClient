@@ -1,0 +1,17 @@
+<mat-card class="profile-card">
+  <mat-card-header>
+    <div mat-card-avatar>
+      <img class="profile-avatar" [src]="userAvatar" [alt]="account.nickname" />
+    </div>
+    <mat-card-title>{{account.nickname}}</mat-card-title>
+    <mat-card-subtitle *ngIf="account.languages">{{account.languages}}</mat-card-subtitle>
+  </mat-card-header>
+  <img mat-card-image [src]="userAvatar" [alt]="account.nickname" />
+  <mat-card-content *ngIf="account.statusInfo">
+    <p>{{account.statusInfo}}</p>
+  </mat-card-content>
+  <mat-card-actions>
+    <p><button mat-stroked-button (click)="addFriend()">Add to friends</button></p>
+    <p><button mat-stroked-button (click)="openDialog()">Write message</button></p>
+  </mat-card-actions>
+</mat-card>

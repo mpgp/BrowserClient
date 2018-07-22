@@ -11,6 +11,7 @@ const routes: Routes = [
     children: [
       { path: '', pathMatch: 'full', redirectTo: 'general' },
       { path: 'general', loadChildren: '../features/general/general.module#GeneralModule' },
+      { path: 'profile/:id', loadChildren: '../features/profile/profile.module#ProfileModule' },
     ],
   },
   { path: 'error', component: MainErrorComponent },

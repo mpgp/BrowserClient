@@ -21,4 +21,8 @@ export class MainToolbarAvatarComponent {
       map(x => environment.imageUrl + x.user.avatar),
     );
   }
+
+  get userId(): number {
+    return this.accountService.authInfo.user.accountId;
+  }
 }
