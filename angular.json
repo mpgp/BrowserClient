@@ -49,7 +49,7 @@
             ],
             "styles": [
               {
-                "input": "node_modules/@angular/material/prebuilt-themes/pink-bluegrey.css"
+                "input": "node_modules/@angular/material/prebuilt-themes/indigo-pink.css"
               },
               "src/styles.scss"
             ],
@@ -80,12 +80,13 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "client:build"
-          },
-          "configurations": {
-            "production": {
-              "browserTarget": "client:build:production"
-            }
+            "aot": false,
+            "baseHref": "/",
+            "browserTarget": "client:build",
+            "deployUrl": "/",
+            "liveReload": true,
+            "progress": true,
+            "watch": true
           }
         },
         "extract-i18n": {

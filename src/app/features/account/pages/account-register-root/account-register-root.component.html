@@ -1,0 +1,13 @@
+<mat-card class="account-register">
+  <mat-card-title>
+    Sign Up
+  </mat-card-title>
+  <mat-card-content>
+    <mat-error *ngIf="formErorr$ | async as formErorr">{{formErorr}}</mat-error>
+    <account-register-form (submit)="onSubmit($event)"></account-register-form>
+  </mat-card-content>
+</mat-card>
+<p class="account-disclaimer">
+  Already have an account?
+  <a routerLink="/account/login" mat-button color="primary">Log In</a>
+</p>

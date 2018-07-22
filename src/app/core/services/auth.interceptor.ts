@@ -3,14 +3,22 @@ import { ErrorHandler, Injectable } from '@angular/core';
 import { Observable, of } from 'rxjs';
 import { catchError, delay, retryWhen, scan, tap } from 'rxjs/operators';
 
+import { AccountService } from './account.service';
+
 @Injectable()
 export class AuthInterceptor implements HttpInterceptor {
-  constructor(private readonly errorHandler: ErrorHandler) {}
+  constructor(private readonly accountService: AccountService, private readonly errorHandler: ErrorHandler) {}
 
   intercept(request: HttpRequest<{}>, next: HttpHandler): Observable<HttpEvent<{}>> {
+    const authorizationHeader = {};
+    if (this.accountService.isLoggedIn) {
+      const access_token = this.accountService.authInfo.access_token;
+      authorizationHeader['Authorization'] = `Bearer ${access_token}`;
+    }
+
     const newRequest = request.clone({
       setHeaders: {
-        Authorization: `Bearer ...xAuthToken...`,
+        ...authorizationHeader,
       },
     });
 
@@ -31,8 +39,7 @@ export class AuthInterceptor implements HttpInterceptor {
           delay(2000),
           catchError(error => {
             this.errorHandler.handleError(error);
-
-            return of(error);
+            throw of(error);
           }),
         ),
       ),

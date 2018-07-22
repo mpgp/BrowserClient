@@ -1,45 +1,54 @@
 import { LocationStrategy, PathLocationStrategy } from '@angular/common';
-import { HttpErrorResponse } from '@angular/common/http';
+import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable, of } from 'rxjs';
+import { EMPTY, Observable } from 'rxjs';
 
+import { catchError } from 'rxjs/operators';
+import { AccountDto } from '~/core/interfaces/account.dto';
+import { AccountService } from '~/core/services/account.service';
 import { environment } from '~/env/environment';
 
 export interface ErrorWithContext extends Error {
   appId: string;
-  id: string;
   status: number | null;
-  time: number;
   url: string;
-  user: string;
+  user: AccountDto;
 }
 
 @Injectable()
 export class ErrorsLogger {
-  constructor(private readonly locationStrategy: LocationStrategy) {}
+  constructor(
+    private readonly accountService: AccountService,
+    private readonly http: HttpClient,
+    private readonly locationStrategy: LocationStrategy,
+  ) {}
 
-  logError(error: Error): Observable<Error> {
+  logError(error: Error): Observable<void> {
+    const errorWithContext = this.addContextInfo(error);
     if (!environment.production) {
-      console.error(error);
+      console.error({ error, errorWithContext });
     }
 
-    // TODO: Send error to server.
-    return of(this.addContextInfo(error));
+    return this.http.post<void>(`${environment.apiUrl}exception`, errorWithContext).pipe(
+      catchError(err => {
+        console.error('Can not log error!', err);
+
+        return EMPTY;
+      }),
+    );
   }
 
   private addContextInfo(error: Error): ErrorWithContext {
-    const name = error.name || null;
-    const appId = environment.clientId;
-    const user = '-';
-    const time = new Date().getTime();
-    const id = `${appId}-${user}-${time}`;
+    const result: ErrorWithContext = error as ErrorWithContext;
     const location = this.locationStrategy;
-    const url = location instanceof PathLocationStrategy ? location.path() : '';
-    const status = (error as HttpErrorResponse).status || null;
-    const message = error.message || error.toString();
-    const stack = error.stack;
-    const errorWithContext = { name, appId, user, time, id, url, status, message, stack };
 
-    return errorWithContext;
+    result.appId = environment.clientId;
+    result.message = error.message || error.toString();
+    result.url = location instanceof PathLocationStrategy ? location.path() : '';
+    result.user = this.accountService.authInfo && this.accountService.authInfo.user;
+    result.stack = error.stack;
+    result.status = (error as HttpErrorResponse).status || null;
+
+    return result;
   }
 }

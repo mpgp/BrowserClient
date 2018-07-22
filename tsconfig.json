@@ -9,12 +9,12 @@
     "removeComments": true,
     "baseUrl": "src",
     "paths": {
-      "~/app/*": ["app/*"],
       "~/core/*": ["app/core/*"],
       "~/env/*": ["environments/*"],
       "~/features/*": ["features/*"],
       "~/main/*": ["app/main/*"],
-      "~/shared/*": ["app/shared/*"]
+      "~/shared": ["app/shared"],
+      "~/app/*": ["app/*"]
     },
     "outDir": "./dist/out-tsc",
     "sourceMap": true,

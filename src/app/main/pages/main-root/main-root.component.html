@@ -1,9 +1,11 @@
 <mat-toolbar color="primary">
   <mat-toolbar-row>
-    <img src="assets/images/logo.png" alt="logo" title="Multiplayer Game Platform" />
+    <a routerLink="/">
+      <img src="assets/images/logo.png" alt="logo" title="Multiplayer Game Platform" />
+    </a>
     <span>MPGP</span>
     <span class="toolbar-spacer"></span>
-    <div class="toolbar-buttons-panel">
+    <div class="toolbar-buttons-panel" *ngIf="accountService.isLoggedIn">
       <main-toolbar-notifications></main-toolbar-notifications>
       <main-toolbar-mail></main-toolbar-mail>
       <main-toolbar-avatar></main-toolbar-avatar>

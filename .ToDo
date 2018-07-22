@@ -4,9 +4,6 @@ BrowserClient:
     In Progress:
 
         @critical @feature 
-        ☐ feat(account): admin\src\app\services\auth-http.service.ts @created(18-06-13 22:04:47)
-
-        @critical @feature 
         ☐ feat(core): install mobx @created(18-06-13 22:02:44)
         mobxAngularDebug
         `@Observer / *mobxAutorun`
@@ -55,14 +52,14 @@ BrowserClient:
         `with store<appstate>`
         `with store<featurestate>`
         https://offering.solutions/blog/articles/2018/02/10/separating-state-into-angular-modules-with-ngrx/
-    
+
 Archive:
     ✔ feat(core): catch errors/pass headers via interceptor @created(18-06-13 21:55:41) @done(18-06-30 12:23:37) @project(BrowserClient.In Progress)
     custom errorhandler (0rl1on)
     https://angular.io/api/common/http/HttpInterceptor
     https://www.youtube.com/watch?v=z9U_xYSsVRw
-    
-✔ create page submodules with lazyloading   for feature modules if need
+
+    ✔ create page submodules with lazyloading   for feature modules if need
 
 Info:
 material icons - https://material.io/tools/icons/?icon=public&style=baseline
@@ -84,43 +81,43 @@ param types:.
     outlet params(/api(a:1))
 
 busy loader:.
-```HTML
-<ng-template [ngIf]="busy$ | async">
-Loading...
-</ng-template>
-<ng-container *ngIf="counter$ | async as counter">
-<p>{{counter}}</p><br />
-<p>{{counter}}</p><br />
-<p>{{counter}}</p><br />
-</ng-container>
-```
-```TypeScript
-this.counter$ = interval(5000).pipe(
-map(_ => Math.random() * 10),
-tap(_ => this.busy$.next(true)),
-tap(_ => console.warn('send new req')),
-switchMap(x => timer(2000).pipe(map(_ => x))),
-tap(_ => console.warn('data received')),
-tap(_ => this.busy$.next(false)),
-);
-```
+    ```HTML
+    <ng-template [ngIf]="busy$ | async">
+        Loading...
+    </ng-template>
+    <ng-container *ngIf="counter$ | async as counter">
+        <p>{{counter}}</p><br />
+        <p>{{counter}}</p><br />
+        <p>{{counter}}</p><br />
+    </ng-container>
+    ```
+    ```TypeScript
+    this.counter$ = interval(5000).pipe(
+        map(_ => Math.random() * 10),
+        tap(_ => this.busy$.next(true)),
+        tap(_ => console.warn('send new req')),
+        switchMap(x => timer(2000).pipe(map(_ => x))),
+        tap(_ => console.warn('data received')),
+        tap(_ => this.busy$.next(false)),
+    );
+    ```
 
 something:.
-```JavaScript
-this.form.valueChanges
-.filter(_ => this.from.valid)
-.throttle(500)
-.subscribe(action);
-autocompleter
-.filter(validation)
-.debounc(500)
-.switchMap(getData)
-.subscribe(action);
-```
+    ```JavaScript
+    this.form.valueChanges
+        .filter(_ => this.from.valid)
+        .throttle(500)
+        .subscribe(action);
+    autocompleter
+        .filter(validation)
+        .debounc(500)
+        .switchMap(getData)
+        .subscribe(action);
+    ```
 perf:.
-```JavaScript
-class MyApplicationRef extends ApplicationRef {
-tick() {}
-}
+    ```JavaScript
+    class MyApplicationRef extends ApplicationRef {
+        tick() {}
+    }
 ```
-`{provide: applicationref, useClass: MyApplicationRef}`
+    `{provide: applicationref, useClass: MyApplicationRef}`

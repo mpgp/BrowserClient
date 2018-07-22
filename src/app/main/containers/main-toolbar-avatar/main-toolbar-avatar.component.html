@@ -1,5 +1,5 @@
 <a href="javascript:void(0);" [matMenuTriggerFor]="menu" class="toolbar-button">
-  <img src="https://avatars0.githubusercontent.com/u/20480552?s=40&v=4" alt="avatar" title="My profile" class="toolbar-avatar" />
+  <img [src]="userAvatar$ | async" alt="avatar" title="My profile" class="toolbar-avatar" />
   <mat-icon class="toolbar-icon">arrow_drop_down</mat-icon>
 </a>
 <mat-menu #menu="matMenu">

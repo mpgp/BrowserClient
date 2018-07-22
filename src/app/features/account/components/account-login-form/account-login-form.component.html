@@ -1,0 +1,26 @@
+<form autocomplete="off" role="presentation" [formGroup]="form" (ngSubmit)="onSubmit($event)">
+  <table class="account-login-table">
+    <tr>
+      <td colspan="2">
+        <mat-form-field class="demo-full-width">
+          <input matInput placeholder="Login" name="login" autocomplete="off" formControlName="login" required>
+          <mat-error [MpgpFormControlError]="form.controls['login'].errors"></mat-error>
+        </mat-form-field>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="2">
+        <mat-form-field class="demo-full-width">
+          <input matInput placeholder="Password" name="password" type="password" autocomplete="new-password" formControlName="password"
+            required>
+            <mat-error [MpgpFormControlError]="form.controls['password'].errors"></mat-error>
+        </mat-form-field>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="2" class="content-center">
+        <button mat-raised-button color="accent" [disabled]="!form.valid">Submit</button>
+      </td>
+    </tr>
+  </table>
+</form>
