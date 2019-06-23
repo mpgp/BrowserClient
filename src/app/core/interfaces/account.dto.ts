@@ -1,5 +1,5 @@
-export interface AccountDto {
-  accountId: number;
+export class AccountDto {
+  id: number;
   avatar: string;
   languages: string;
   lastOnline: Date;

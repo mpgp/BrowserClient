@@ -13,7 +13,7 @@ import { environment } from '~/env/environment';
   templateUrl: './main-toolbar-avatar.component.html',
 })
 export class MainToolbarAvatarComponent {
-  constructor(private readonly accountService: AccountService) {}
+  constructor(private readonly accountService: AccountService) { }
 
   get userAvatar$(): Observable<string> {
     return this.accountService.authInfo$.pipe(
@@ -23,6 +23,6 @@ export class MainToolbarAvatarComponent {
   }
 
   get userId(): number {
-    return this.accountService.authInfo.user.accountId;
+    return this.accountService.authInfo.user.id;
   }
 }

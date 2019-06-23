@@ -20,10 +20,10 @@ export class ProfileCardComponent {
   }
 
   addFriend(): void {
-    this.addedFriend.emit(this.account.accountId);
+    this.addedFriend.emit(this.account.id);
   }
 
   openDialog(): void {
-    this.openedDialog.emit(this.account.accountId);
+    this.openedDialog.emit(this.account.id);
   }
 }

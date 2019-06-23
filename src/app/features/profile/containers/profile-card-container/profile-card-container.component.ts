@@ -10,17 +10,17 @@ import { AccountService } from '~/core/services/account.service';
   templateUrl: './profile-card-container.component.html',
 })
 export class ProfileCardContainerComponent {
-  constructor(private readonly accountService: AccountService) {}
+  constructor(private readonly accountService: AccountService) { }
 
   get account(): AccountDto {
     return this.accountService.authInfo.user;
   }
 
-  addFriend(accountId: number): void {
-    console.error('TODO: ', accountId);
+  addFriend(id: number): void {
+    console.error('TODO: ', id);
   }
 
-  openDialog(accountId: number): void {
-    console.error('TODO: ', accountId);
+  openDialog(id: number): void {
+    console.error('TODO: ', id);
   }
 }

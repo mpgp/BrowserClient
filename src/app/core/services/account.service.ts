@@ -41,7 +41,7 @@ export class AccountService {
       catchError(_ => {
         throw new Error('Invalid login or password');
       }),
-      tap(response => this.handleAuthorizationResponse(response)),
+      tap(this.handleAuthorizationResponse),
     );
   }
 
@@ -62,7 +62,7 @@ export class AccountService {
         }
         throw new Error('Invalid input.');
       }),
-      tap(response => this.handleAuthorizationResponse(response)),
+      tap(this.handleAuthorizationResponse),
     );
   }
 

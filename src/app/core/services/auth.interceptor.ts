@@ -7,13 +7,13 @@ import { AccountService } from './account.service';
 
 @Injectable()
 export class AuthInterceptor implements HttpInterceptor {
-  constructor(private readonly accountService: AccountService, private readonly errorHandler: ErrorHandler) {}
+  constructor(private readonly accountService: AccountService, private readonly errorHandler: ErrorHandler) { }
 
   intercept(request: HttpRequest<{}>, next: HttpHandler): Observable<HttpEvent<{}>> {
     const authorizationHeader = {};
     if (this.accountService.isLoggedIn) {
-      const access_token = this.accountService.authInfo.access_token;
-      authorizationHeader['Authorization'] = `Bearer ${access_token}`;
+      const authToken = this.accountService.authInfo.authToken;
+      authorizationHeader['Authorization'] = `Bearer ${authToken}`;
     }
 
     const newRequest = request.clone({
