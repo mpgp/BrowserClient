@@ -1,3 +1,10 @@
+## [1.2.1](https://github.com/mpgp/BrowserClient/compare/v1.2.0...v1.2.1) (2019-07-06)
+
+
+### Bug Fixes
+
+* many changes ([fe62a3f](https://github.com/mpgp/BrowserClient/commit/fe62a3f))
+
 # [1.2.0](https://github.com/mpgp/BrowserClient/compare/v1.1.0...v1.2.0) (2018-07-30)
 
 
