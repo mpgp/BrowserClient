@@ -142,7 +142,7 @@
     "@angular/cli": "8.0.3",
     "@angular/compiler-cli": "8.0.1",
     "@angular/language-service": "8.0.1",
-    "@commitlint/cli": "8.0.0",
+    "@commitlint/cli": "8.1.0",
     "@commitlint/config-conventional": "8.0.0",
     "@commitlint/config-lerna-scopes": "8.0.0",
     "@compodoc/compodoc": "1.1.9",
