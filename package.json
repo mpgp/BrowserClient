@@ -163,7 +163,7 @@
     "karma-coverage-istanbul-reporter": "2.0.5",
     "karma-jasmine": "2.0.1",
     "karma-jasmine-html-reporter": "1.4.2",
-    "lint-staged": "8.2.1",
+    "lint-staged": "9.2.1",
     "protractor": "5.4.2",
     "rxjs-tslint": "0.1.7",
     "ts-node": "8.3.0",
