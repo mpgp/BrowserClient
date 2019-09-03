@@ -132,7 +132,7 @@
     "@angular/router": "8.0.1",
     "core-js": "3.1.4",
     "rxjs": "6.5.2",
-    "rxjs-compat": "6.5.2",
+    "rxjs-compat": "6.5.3",
     "stylelint": "10.1.0",
     "stylelint-order": "3.0.0",
     "zone.js": "0.9.1"
