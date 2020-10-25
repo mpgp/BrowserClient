@@ -41,7 +41,7 @@ export class AccountService {
       catchError(_ => {
         throw new Error('Invalid login or password');
       }),
-      tap(this.handleAuthorizationResponse),
+      tap(_ => this.handleAuthorizationResponse),
     );
   }
 
@@ -57,16 +57,18 @@ export class AccountService {
   register(command: RegisterAccountCommand): Observable<AuthInfo> {
     return this.http.put<AuthInfo>(this.path, command).pipe(
       catchError(error => {
+        // tslint:disable-next-line:no-unused-expression
         if (error && error.value && error.value.status === 409) {
           throw new Error('That login is taken. Try another.');
         }
         throw new Error('Invalid input.');
       }),
-      tap(this.handleAuthorizationResponse),
+      tap(_ => this.handleAuthorizationResponse),
     );
   }
 
   private handleAuthorizationResponse(response: AuthInfo): void {
+    // tslint:disable-next-line:no-unused-expression
     if (!response.errorCode) {
       this.saveAuthInfo(response);
 
