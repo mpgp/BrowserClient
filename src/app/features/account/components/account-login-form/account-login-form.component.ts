@@ -11,7 +11,7 @@ import { AuthorizeAccountCommand } from '~/core/interfaces/authorize-account-com
   templateUrl: './account-login-form.component.html',
 })
 export class AccountLoginFormComponent implements OnInit {
-  form: FormGroup;
+  form!: FormGroup;
 
   @Output() submit = new EventEmitter<AuthorizeAccountCommand>();
 

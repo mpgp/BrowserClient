@@ -11,7 +11,7 @@ import { RegisterAccountCommand } from '~/core/interfaces/register-account-comma
   templateUrl: './settings-account-data-form.component.html',
 })
 export class SettingsAccountDataFormComponent implements OnInit {
-  form: FormGroup;
+  form!: FormGroup;
 
   @Output() submit = new EventEmitter<RegisterAccountCommand>();
 

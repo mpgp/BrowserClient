@@ -23,6 +23,7 @@ export class MainToolbarAvatarComponent {
   }
 
   get userId(): number {
+    // @ts-ignore
     return this.accountService.authInfo.user.id;
   }
 }

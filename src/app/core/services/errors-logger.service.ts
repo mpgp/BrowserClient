@@ -12,7 +12,7 @@ export interface ErrorWithContext extends Error {
   appId: string;
   status: number | null;
   url: string;
-  user: AccountDto;
+  user: AccountDto | undefined;
 }
 
 @Injectable()

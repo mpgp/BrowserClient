@@ -13,7 +13,7 @@ export class ProfileCardContainerComponent {
   constructor(private readonly accountService: AccountService) { }
 
   get account(): AccountDto {
-    return this.accountService.authInfo.user;
+    return this.accountService.authInfo!.user;
   }
 
   addFriend(id: number): void {

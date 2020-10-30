@@ -1,9 +1,12 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { MatButtonModule, MatFormFieldModule, MatInputModule, MatTabsModule } from '@angular/material';
+import { MatButtonModule } from '@angular/material/button';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
+import { MatTabsModule } from '@angular/material/tabs';
 
-import { MpgpFormControlErrorModule } from '~/shared';
+import { MpgpFormControlErrorModule } from '~/shared/directives';
 
 import { components } from './components';
 import { containers } from './containers';

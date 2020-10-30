@@ -1,8 +1,8 @@
 import { ChangeDetectionStrategy, Component, EventEmitter, OnInit, Output, ViewEncapsulation } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
-import { RegisterAccountCommand } from '~/core/interfaces/register-account-command';
-import { CustomValidators } from '~/shared';
+import { UpdatePasswordCommand } from '~/core/interfaces/update-password-command';
+import { CustomValidators } from '~/shared/custom-validators';
 
 @Component({
   changeDetection: ChangeDetectionStrategy.OnPush,
@@ -12,9 +12,9 @@ import { CustomValidators } from '~/shared';
   templateUrl: './settings-account-password-form.component.html',
 })
 export class SettingsAccountPasswordFormComponent implements OnInit {
-  form: FormGroup;
+  form!: FormGroup;
 
-  @Output() submit = new EventEmitter<RegisterAccountCommand>();
+  @Output() submit = new EventEmitter<UpdatePasswordCommand>();
 
   constructor(private readonly fb: FormBuilder) {}
 

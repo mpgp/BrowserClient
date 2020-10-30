@@ -11,7 +11,7 @@ import { environment } from '~/env/environment';
   templateUrl: './profile-card.component.html',
 })
 export class ProfileCardComponent {
-  @Input() account: AccountDto;
+  @Input() account!: AccountDto;
   @Output() addedFriend: EventEmitter<number> = new EventEmitter<number>();
   @Output() openedDialog: EventEmitter<number> = new EventEmitter<number>();
 

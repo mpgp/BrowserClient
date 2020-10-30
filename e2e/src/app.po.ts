@@ -1,12 +1,13 @@
-// tslint:disable: no-any
 import { browser, by, element } from 'protractor';
 
 export class AppPage {
-  navigateTo(): any {
-    return browser.get('/');
+  navigateTo(): Promise<unknown> {
+    return browser.get(browser.baseUrl) as Promise<unknown>;
   }
 
-  getParagraphText(): any {
-    return element(by.css('mat-toolbar-row > span')).getText();
+  getParagraphText(): Promise<string> {
+    const selector = 'mat-toolbar-row > span';
+
+    return element(by.css(selector)).getText() as Promise<string>;
   }
 }

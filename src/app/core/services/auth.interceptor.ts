@@ -12,7 +12,9 @@ export class AuthInterceptor implements HttpInterceptor {
   intercept(request: HttpRequest<{}>, next: HttpHandler): Observable<HttpEvent<{}>> {
     const authorizationHeader = {};
     if (this.accountService.isLoggedIn) {
+      // @ts-ignore
       const authToken = this.accountService.authInfo.authToken;
+      // @ts-ignore
       authorizationHeader['Authorization'] = `Bearer ${authToken}`;
     }
 

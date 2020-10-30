@@ -2,7 +2,7 @@ import { ChangeDetectionStrategy, Component, EventEmitter, OnInit, Output, ViewE
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 import { RegisterAccountCommand } from '~/core/interfaces/register-account-command';
-import { CustomValidators } from '~/shared';
+import { CustomValidators } from '~/shared/custom-validators';
 
 @Component({
   changeDetection: ChangeDetectionStrategy.OnPush,
@@ -12,7 +12,7 @@ import { CustomValidators } from '~/shared';
   templateUrl: './account-register-form.component.html',
 })
 export class AccountRegisterFormComponent implements OnInit {
-  form: FormGroup;
+  form!: FormGroup;
 
   @Output() submit = new EventEmitter<RegisterAccountCommand>();
 

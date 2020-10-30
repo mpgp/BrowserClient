@@ -1,4 +1,5 @@
 import { Directive, ElementRef, Input } from '@angular/core';
+import { ValidationErrors } from '@angular/forms';
 
 interface FormControlError {
   matchPassword?: boolean;
@@ -15,7 +16,7 @@ export class MpgpFormControlErrorDirective {
   constructor(private readonly el: ElementRef) {}
 
   @Input()
-  set MpgpFormControlError(errors: FormControlError) {
+  set MpgpFormControlError(errors: ValidationErrors | FormControlError | null) {
     if (!errors) {
       return;
     }
@@ -34,7 +35,7 @@ export class MpgpFormControlErrorDirective {
       return `Pattern must be ${errors.pattern.requiredPattern}`;
     } else if (errors.matchPassword) {
       return 'Password did not match';
-    } else if (errors.required) {
+    } else {
       return 'Invalid value';
     }
   }

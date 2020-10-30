@@ -12,19 +12,23 @@ import { RegisterAccountCommand } from '../interfaces/register-account-command';
 
 @Injectable()
 export class AccountService {
-  private authInfoValue: AuthInfo;
+  private static readonly localStorageKey = 'auth';
+  private authInfoValue: AuthInfo | undefined;
   private readonly authInfoSubject$ = new ReplaySubject<AuthInfo>();
   private readonly authInfoValue$: Observable<AuthInfo>;
   private readonly path = `${environment.apiUrl}account`;
-  private static readonly localStorageKey = 'auth';
 
-  constructor(private readonly http: HttpClient, private readonly route: ActivatedRoute, private readonly router: Router) {
-    this.authInfoValue = JSON.parse(localStorage.getItem(AccountService.localStorageKey) || null);
+  constructor(
+    private readonly http: HttpClient,
+    private readonly route: ActivatedRoute,
+    private readonly router: Router
+  ) {
+    this.authInfoValue = JSON.parse(localStorage.getItem(AccountService.localStorageKey) as string);
     this.authInfoValue$ = this.authInfoSubject$.asObservable();
     this.authInfoSubject$.next(this.authInfo);
   }
 
-  get authInfo(): AuthInfo {
+  get authInfo(): AuthInfo | undefined {
     return this.authInfoValue;
   }
 
@@ -41,14 +45,14 @@ export class AccountService {
       catchError(_ => {
         throw new Error('Invalid login or password');
       }),
-      tap(_ => this.handleAuthorizationResponse),
+      tap(response => this.handleAuthorizationResponse(response)),
     );
   }
 
   logout(): Observable<void> {
-    return of(null).pipe(
+    return of(void 0).pipe(
       tap(_ => {
-        this.saveAuthInfo(null);
+        this.saveAuthInfo(undefined);
         localStorage.removeItem(AccountService.localStorageKey);
       }),
     );
@@ -63,7 +67,7 @@ export class AccountService {
         }
         throw new Error('Invalid input.');
       }),
-      tap(_ => this.handleAuthorizationResponse),
+      tap(response => this.handleAuthorizationResponse(response)),
     );
   }
 
@@ -80,7 +84,7 @@ export class AccountService {
     }
   }
 
-  private saveAuthInfo(info: AuthInfo): void {
+  private saveAuthInfo(info: AuthInfo | undefined): void {
     localStorage.setItem(AccountService.localStorageKey, JSON.stringify(info));
     this.authInfoValue = info;
     this.authInfoSubject$.next(info);

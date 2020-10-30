@@ -10,13 +10,13 @@ const routes: Routes = [
     canActivate: [AuthGuard],
     children: [
       { path: '', pathMatch: 'full', redirectTo: 'general' },
-      { path: 'general', loadChildren: '../features/general/general.module#GeneralModule' },
-      { path: 'profile/:id', loadChildren: '../features/profile/profile.module#ProfileModule' },
-      { path: 'settings', loadChildren: '../features/settings/settings.module#SettingsModule' },
+      { path: 'general', loadChildren: () => import('../features/general/general.module').then(m => m.GeneralModule) },
+      { path: 'profile/:id', loadChildren: () => import('../features/profile/profile.module').then(m => m.ProfileModule) },
+      { path: 'settings', loadChildren: () => import('../features/settings/settings.module').then(m => m.SettingsModule) },
     ],
   },
   { path: 'error', component: MainErrorComponent },
-  { path: 'account', loadChildren: '../features/account/account.module#AccountModule' },
+  { path: 'account', loadChildren: () => import('../features/account/account.module').then(m => m.AccountModule) },
   { path: '**', redirectTo: 'error' },
 ];
 

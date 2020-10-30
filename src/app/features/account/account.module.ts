@@ -1,9 +1,12 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { MatButtonModule, MatCardModule, MatFormFieldModule, MatInputModule } from '@angular/material';
+import { MatButtonModule } from '@angular/material/button';
+import { MatCardModule } from '@angular/material/card';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
 
-import { MpgpFormControlErrorModule } from '~/shared';
+import { MpgpFormControlErrorModule } from '~/shared/directives';
 
 import { AccountRoutingModule } from './account-routing.module';
 import { components } from './components';
@@ -20,8 +23,8 @@ const imports = [AccountRoutingModule, CommonModule, FormsModule, MpgpFormContro
 const providers = [LogoutGuard, UnauthorizedGuard];
 
 @NgModule({
-  declarations,
-  imports,
-  providers,
-})
+            declarations,
+            imports,
+            providers,
+          })
 export class AccountModule {}

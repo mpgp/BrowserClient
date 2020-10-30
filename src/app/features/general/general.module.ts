@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { MatCardModule } from '@angular/material';
+import { MatCardModule } from '@angular/material/card';
 
 import { components } from './components';
 import { containers } from './containers';
