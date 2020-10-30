@@ -54,3 +54,7 @@ deploy:
     target-branch: gh-pages
     email: torvalds@linux-foundation.org
     name: Linus Torvalds
+
+after_success:
+  - echo Generate coverage info and deploy it to coveralls.io
+  - cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js

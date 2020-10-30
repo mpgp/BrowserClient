@@ -17,8 +17,8 @@ export class MainToolbarAvatarComponent {
 
   get userAvatar$(): Observable<string> {
     return this.accountService.authInfo$.pipe(
-      filter(x => !!x),
-      map(x => environment.imageUrl + x.user.avatar),
+      filter((x: any) => !!x),
+      map((x: any) => environment.imageUrl + x.user.avatar),
     );
   }
 
