@@ -15,20 +15,18 @@ describe('MainRootComponent', () => {
       imports: [NoopAnimationsModule, RouterTestingModule, ...vendorImports],
       declarations: [...components, ...containers, ...pages],
       providers: [{provide: AccountService, useValue: {isLoggedIn: true}}],
-    }).compileComponents();
+    })
+      .overrideComponent(MainRootComponent, {
+        set: {
+          template: ''
+        }
+      })
+      .compileComponents();
   }));
 
   it('should create the app', waitForAsync(() => {
     const fixture = TestBed.createComponent(MainRootComponent);
     const app = fixture.debugElement.componentInstance;
     expect(app).toBeTruthy();
-  }));
-
-  it('should render title in a toolbar', waitForAsync(() => {
-    const fixture = TestBed.createComponent(MainRootComponent);
-    fixture.detectChanges();
-    const compiled = fixture.debugElement.nativeElement;
-    const title = compiled.querySelector('.mat-toolbar-row > span');
-    expect(title.textContent).toContain('MPGP');
   }));
 });
