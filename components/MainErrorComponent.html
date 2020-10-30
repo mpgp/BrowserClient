@@ -1,0 +1,268 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>MPGP BrowserClient</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	      <link rel="stylesheet" href="../styles/style.css">
+    </head>
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top visible-xs">
+            <a href="../" class="navbar-brand">MPGP BrowserClient</a>
+            <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="hidden-xs menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content component">
+                   <div class="content-data">
+
+
+
+
+<ol class="breadcrumb">
+  <li>Components</li>
+  <li>MainErrorComponent</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="active">
+            <a href="#info" role="tab" id="info-tab" data-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li >
+            <a href="#source" role="tab" id="source-tab" data-toggle="tab" data-link="source">Source</a>
+        </li>
+        <li >
+            <a href="#templateData" role="tab" id="templateData-tab" data-toggle="tab" data-link="template">Template</a>
+        </li>
+        <li >
+            <a href="#styleData" role="tab" id="styleData-tab" data-toggle="tab" data-link="style">Styles</a>
+        </li>
+        <li >
+            <a href="#tree" role="tab" id="tree-tab" data-toggle="tab" data-link="dom-tree">DOM Tree</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="c-info"><p class="comment">
+    <h3>File</h3>
+</p>
+<p class="comment">
+    <code>src/app/main/pages/main-error/main-error.component.ts</code>
+</p>
+
+
+
+
+
+<section>
+    <h3>Metadata</h3>
+    <table class="table table-sm table-hover">
+        <tbody>
+
+            <tr>
+                <td class="col-md-3">changeDetection</td>
+                <td class="col-md-9"><code>ChangeDetectionStrategy.OnPush</code></td>
+            </tr>
+
+            <tr>
+                <td class="col-md-3">encapsulation</td>
+                <td class="col-md-9"><code>ViewEncapsulation.None</code></td>
+            </tr>
+
+
+
+
+
+
+
+
+
+            <tr>
+                <td class="col-md-3">selector</td>
+                <td class="col-md-9"><code>main-error</code></td>
+            </tr>
+
+            <tr>
+                <td class="col-md-3">styleUrls</td>
+                <td class="col-md-9"><code>./main-error.component.scss</code></td>
+            </tr>
+
+
+
+            <tr>
+                <td class="col-md-3">templateUrl</td>
+                <td class="col-md-9"><code>./main-error.component.html</code></td>
+            </tr>
+
+
+
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+
+
+
+
+
+
+
+
+</div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="c-source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { ChangeDetectionStrategy, Component, ViewEncapsulation } from &#x27;@angular/core&#x27;;
+
+@Component({
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  encapsulation: ViewEncapsulation.None,
+  selector: &#x27;main-error&#x27;,
+  styleUrls: [&#x27;./main-error.component.scss&#x27;],
+  templateUrl: &#x27;./main-error.component.html&#x27;,
+})
+export class MainErrorComponent {}
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-templateData">
+        <pre class="line-numbers"><code class="language-html">&lt;div class&#x3D;&quot;main-error&quot;&gt;
+  &lt;h2 class&#x3D;&quot;main-error-title&quot;&gt;Oops!&lt;/h2&gt;
+  &lt;h3 class&#x3D;&quot;main-error-subtitle&quot;&gt;Sorry Something Went Wrong!&lt;/h3&gt;
+  &lt;a routerLink&#x3D;&quot;/&quot; mat-raised-button&gt;
+    &lt;mat-icon&gt;home&lt;/mat-icon&gt; Go To Home
+  &lt;/a&gt;
+  &lt;a href&#x3D;&quot;mailto:loktionov129@gmail.com&quot; mat-raised-button&gt;
+    &lt;mat-icon&gt;mail&lt;/mat-icon&gt; Contact Support
+  &lt;/a&gt;
+&lt;/div&gt;</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-styleData">
+                <p class="comment">
+                    <code>./main-error.component.scss</code>
+                </p>
+                <pre class="line-numbers"><code class="language-scss">.main-error {
+  text-align: center;
+
+  .mat-raised-button {
+    margin: 0 4px 0 8px;
+  }
+}</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-tree">
+        <div id="tree-container"></div>
+        <div class="tree-legend">
+            <div class="title">
+                <b>Legend</b>
+            </div>
+            <div>
+                <div class="color htmlelement"></div><span>Html element</span>
+            </div>
+            <div>
+                <div class="color component"></div><span>Component</span>
+            </div>
+            <div>
+                <div class="color directive"></div><span>Html element with directive</span>
+            </div>
+        </div>
+    </div>
+
+    
+</div>
+
+<script src="../js/libs/vis.min.js"></script>
+<script src="../js/libs/htmlparser.js"></script>
+<script src="../js/libs/deep-iterator.js"></script>
+<script>
+        var COMPONENT_TEMPLATE = '<div><div class="main-error">  <h2 class="main-error-title">Oops!</h2>  <h3 class="main-error-subtitle">Sorry Something Went Wrong!</h3>  <a routerLink="/" mat-raised-button>    <mat-icon>home</mat-icon> Go To Home  </a>  <a href="mailto:loktionov129@gmail.com" mat-raised-button>    <mat-icon>mail</mat-icon> Contact Support  </a></div></div>'
+    var COMPONENTS = [{'name': 'AccountLoginFormComponent', 'selector': 'account-login-form'},{'name': 'AccountLoginRootComponent', 'selector': 'account-login-root'},{'name': 'AccountRegisterFormComponent', 'selector': 'account-register-form'},{'name': 'AccountRegisterRootComponent', 'selector': 'account-register-root'},{'name': 'AppComponent', 'selector': 'app'},{'name': 'GeneralRootComponent', 'selector': 'general-root'},{'name': 'MainErrorComponent', 'selector': 'main-error'},{'name': 'MainRootComponent', 'selector': 'main-root'},{'name': 'MainScrollToTopComponent', 'selector': 'main-scroll-to-top'},{'name': 'MainToolbarAvatarComponent', 'selector': 'main-toolbar-avatar'},{'name': 'MainToolbarMailComponent', 'selector': 'main-toolbar-mail'},{'name': 'MainToolbarNotificationsComponent', 'selector': 'main-toolbar-notifications'},{'name': 'ProfileCardComponent', 'selector': 'profile-card'},{'name': 'ProfileCardContainerComponent', 'selector': 'profile-card-container'},{'name': 'ProfileRootComponent', 'selector': 'profile-root'},{'name': 'ProfileWallContainerComponent', 'selector': 'profile-wall-container'},{'name': 'SettingsAccountContainerComponent', 'selector': 'settings-account-container'},{'name': 'SettingsAccountDataFormComponent', 'selector': 'settings-account-data-form'},{'name': 'SettingsAccountPasswordFormComponent', 'selector': 'settings-account-password-form'},{'name': 'SettingsRootComponent', 'selector': 'settings-root'}];
+    var DIRECTIVES = [{'name': 'MpgpFormControlErrorDirective', 'selector': '[MpgpFormControlError]'}];
+    var ACTUAL_COMPONENT = {'name': 'MainErrorComponent'};
+</script>
+<script src="../js/tree.js"></script>
+
+
+
+
+
+
+
+
+
+
+                   
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> result-matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'component';
+            var COMPODOC_CURRENT_PAGE_URL = 'MainErrorComponent.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+       <!-- Required to polyfill modern browsers as code is ES5 for IE... -->
+       <script src="../js/libs/custom-elements-es5-adapter.js" charset="utf-8" defer></script>
+       <script src="../js/menu-wc.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+       <script src="../js/libs/zepto.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>
