@@ -1,3 +1,14 @@
+## [1.2.2](https://github.com/mpgp/BrowserClient/compare/v1.2.1...v1.2.2) (2020-10-30)
+
+
+### Bug Fixes
+
+* ci ([6089ca9](https://github.com/mpgp/BrowserClient/commit/6089ca95f2f1fe2a830dc3c2ba57e6b0fec37b39))
+* ci ([e20b1cc](https://github.com/mpgp/BrowserClient/commit/e20b1cc229a7bc2f7c0f11b5d55c0986dc58c9ef))
+* ci ([82ab05e](https://github.com/mpgp/BrowserClient/commit/82ab05ee56119b6d545a819422ebbe025e79f715))
+* migrate from ng8 to ng10 ([4dc560d](https://github.com/mpgp/BrowserClient/commit/4dc560d5ebb08576c5c126cf229a317d27774c37))
+* **account:** linting account.service ([f3dcfcc](https://github.com/mpgp/BrowserClient/commit/f3dcfccd92092dcf91bb669da3d9bdb22a1d442a))
+
 ## [1.2.1](https://github.com/mpgp/BrowserClient/compare/v1.2.0...v1.2.1) (2019-07-06)
 
 
