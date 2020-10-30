@@ -25,14 +25,14 @@ export class AuthInterceptor implements HttpInterceptor {
     });
 
     return next.handle(newRequest).pipe(
-      retryWhen(err =>
+      retryWhen((err: any) =>
         err.pipe(
-          tap(error => {
+          tap((error: any) => {
             if (error.status !== 503) {
               throw error;
             }
           }),
-          scan(retryCount => {
+          scan((retryCount: any) => {
             if (retryCount < 5) {
               return retryCount + 1;
             }

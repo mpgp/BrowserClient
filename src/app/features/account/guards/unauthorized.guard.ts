@@ -7,7 +7,7 @@ import { AccountService } from '~/core/services/account.service';
 export class UnauthorizedGuard implements CanActivate {
   constructor(private readonly accountService: AccountService, private readonly router: Router) {}
 
-  canActivate(_route: ActivatedRouteSnapshot, _state: RouterStateSnapshot): boolean {
+  canActivate(_: ActivatedRouteSnapshot, __: RouterStateSnapshot): boolean {
     if (!this.accountService.isLoggedIn) {
       return true;
     }

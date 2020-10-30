@@ -1,7 +1,7 @@
 <h3>Profile Information</h3>
 <mat-error *ngIf="accountErorr$ | async as accountErorr">{{accountErorr}}</mat-error>
-<settings-account-data-form (submit)="updateAccount($event)"></settings-account-data-form>
+<settings-account-data-form (updateAccount)="updateAccount($event)"></settings-account-data-form>
 
 <h3>Change Password</h3>
 <mat-error *ngIf="passwordErorr$ | async as passwordErorr">{{passwordErorr}}</mat-error>
-<settings-account-password-form (submit)="updatePassword($event)"></settings-account-password-form>
+<settings-account-password-form (update)="updatePassword($event)"></settings-account-password-form>

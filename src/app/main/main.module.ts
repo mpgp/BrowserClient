@@ -19,7 +19,7 @@ export const vendorImports = [MatBadgeModule, MatButtonModule, MatIconModule, Ma
 
 const imports = [CommonModule, MainRoutingModule, ...vendorImports];
 
-const _exports = [MainRootComponent];
+const exports = [MainRootComponent];
 
 const providers = [AuthGuard];
 
@@ -27,6 +27,6 @@ const providers = [AuthGuard];
   declarations,
   imports,
   providers,
-  exports: _exports,
+  exports,
 })
 export class MainModule {}

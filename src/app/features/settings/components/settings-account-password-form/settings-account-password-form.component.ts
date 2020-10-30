@@ -14,7 +14,7 @@ import { CustomValidators } from '~/shared/custom-validators';
 export class SettingsAccountPasswordFormComponent implements OnInit {
   form!: FormGroup;
 
-  @Output() submit = new EventEmitter<UpdatePasswordCommand>();
+  @Output() update = new EventEmitter<UpdatePasswordCommand>();
 
   constructor(private readonly fb: FormBuilder) {}
 
@@ -35,6 +35,6 @@ export class SettingsAccountPasswordFormComponent implements OnInit {
 
   onSubmit(event: Event): void {
     event.stopPropagation();
-    this.submit.emit(this.form.value);
+    this.update.emit(this.form.value);
   }
 }

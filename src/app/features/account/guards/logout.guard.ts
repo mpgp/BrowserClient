@@ -7,12 +7,12 @@ import { AccountService } from '~/core/services/account.service';
 export class LogoutGuard implements CanActivate {
   constructor(private readonly accountService: AccountService, private readonly router: Router) {}
 
-  canActivate(_route: ActivatedRouteSnapshot, _state: RouterStateSnapshot): boolean {
+  canActivate(_: ActivatedRouteSnapshot, __: RouterStateSnapshot): boolean {
     if (this.accountService.isLoggedIn) {
       this.accountService.logout().toPromise();
     }
 
-    this.router.navigateByUrl('/').then(_ => location.reload());
+    this.router.navigateByUrl('/').then(() => location.reload());
 
     return false;
   }

@@ -13,7 +13,7 @@ import { RegisterAccountCommand } from '~/core/interfaces/register-account-comma
 export class SettingsAccountDataFormComponent implements OnInit {
   form!: FormGroup;
 
-  @Output() submit = new EventEmitter<RegisterAccountCommand>();
+  @Output() updateAccount = new EventEmitter<RegisterAccountCommand>();
 
   constructor(private readonly fb: FormBuilder) {}
 
@@ -32,6 +32,6 @@ export class SettingsAccountDataFormComponent implements OnInit {
 
   onSubmit(event: Event): void {
     event.stopPropagation();
-    this.submit.emit(this.form.value);
+    this.updateAccount.emit(this.form.value);
   }
 }

@@ -14,7 +14,7 @@ import { CustomValidators } from '~/shared/custom-validators';
 export class AccountRegisterFormComponent implements OnInit {
   form!: FormGroup;
 
-  @Output() submit = new EventEmitter<RegisterAccountCommand>();
+  @Output() register = new EventEmitter<RegisterAccountCommand>();
 
   constructor(private readonly fb: FormBuilder) {}
 
@@ -36,6 +36,6 @@ export class AccountRegisterFormComponent implements OnInit {
 
   onSubmit(event: Event): void {
     event.stopPropagation();
-    this.submit.emit(this.form.value);
+    this.register.emit(this.form.value);
   }
 }

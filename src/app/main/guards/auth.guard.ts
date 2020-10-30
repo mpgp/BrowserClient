@@ -7,7 +7,7 @@ import { AccountService } from '~/core/services/account.service';
 export class AuthGuard implements CanActivate {
   constructor(private readonly accountService: AccountService, private readonly router: Router) {}
 
-  canActivate(_route: ActivatedRouteSnapshot, state: RouterStateSnapshot): boolean {
+  canActivate(_: ActivatedRouteSnapshot, state: RouterStateSnapshot): boolean {
     if (this.accountService.isLoggedIn) {
       return true;
     }

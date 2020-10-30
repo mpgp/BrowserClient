@@ -13,7 +13,7 @@ import { AuthorizeAccountCommand } from '~/core/interfaces/authorize-account-com
 export class AccountLoginFormComponent implements OnInit {
   form!: FormGroup;
 
-  @Output() submit = new EventEmitter<AuthorizeAccountCommand>();
+  @Output() login = new EventEmitter<AuthorizeAccountCommand>();
 
   constructor(private readonly fb: FormBuilder) {}
 
@@ -30,6 +30,6 @@ export class AccountLoginFormComponent implements OnInit {
 
   onSubmit(event: Event): void {
     event.stopPropagation();
-    this.submit.emit(this.form.value);
+    this.login.emit(this.form.value);
   }
 }

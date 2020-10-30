@@ -4,7 +4,7 @@
   </mat-card-title>
   <mat-card-content>
     <mat-error *ngIf="formErorr$ | async as formErorr">{{formErorr}}</mat-error>
-    <account-register-form (submit)="onSubmit($event)"></account-register-form>
+    <account-register-form (register)="register($event)"></account-register-form>
   </mat-card-content>
 </mat-card>
 <p class="account-disclaimer">
