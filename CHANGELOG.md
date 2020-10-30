@@ -1,3 +1,10 @@
+## [1.2.3](https://github.com/mpgp/BrowserClient/compare/v1.2.2...v1.2.3) (2020-10-30)
+
+
+### Bug Fixes
+
+* ci ([da2bfce](https://github.com/mpgp/BrowserClient/commit/da2bfce35a0f75e7d14516c5d13e655154414234))
+
 ## [1.2.2](https://github.com/mpgp/BrowserClient/compare/v1.2.1...v1.2.2) (2020-10-30)
 
 
