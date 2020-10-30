@@ -1,1 +1,5 @@
 COMMANDS_TO_RUN+=('echo 1_before_install.sh ...')
+COMMANDS_TO_RUN+=('sudo chown root /opt/google/chrome/chrome-sandbox')
+COMMANDS_TO_RUN+=('sudo chmod 4755 /opt/google/chrome/chrome-sandbox')
+COMMANDS_TO_RUN+=('export CHROME_BIN=chromium-browser')
+COMMANDS_TO_RUN+=('export DISPLAY=:99.0')
