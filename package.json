@@ -122,7 +122,7 @@
     "@angular/cdk": "10.2.6",
     "@angular/common": "10.2.1",
     "@angular/compiler": "10.2.1",
-    "@angular/core": "10.2.1",
+    "@angular/core": "11.0.5",
     "@angular/flex-layout": "10.0.0-beta.32",
     "@angular/forms": "10.2.1",
     "@angular/http": "7.2.16",
